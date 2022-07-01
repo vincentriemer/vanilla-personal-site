@@ -22,7 +22,8 @@ export default class CirclePacker {
     this.#height = 0;
 
     this.#worker = new Worker(
-      new URL("./circlePacker.worker.js", import.meta.url)
+      new URL("./circlePacker.worker.js", import.meta.url),
+      { type: "module" }
     );
     this.#worker.addEventListener(
       "message",
