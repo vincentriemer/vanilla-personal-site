@@ -1,0 +1,5 @@
+/* JS is required for the onload fade in transition so if noscript
+is enabled we should just display the avatar regardless */
+.avatar-image {
+  opacity: 1;
+}
