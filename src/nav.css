@@ -11,7 +11,8 @@
   left: calc(-1 * var(--nav-circle-radius));
   width: calc(2 * var(--nav-circle-radius));
   height: calc(2 * var(--nav-circle-radius));
-  will-change: transform;
+
+  transform: translate(var(--x, 0px), var(--y, 0px));
 }
 
 .nav-circle-button a {
@@ -25,7 +26,6 @@
   overflow: hidden;
 
   transform: scale(0);
-  will-change: transform;
 
   -webkit-user-select: none;
   user-select: none;

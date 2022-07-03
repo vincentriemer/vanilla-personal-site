@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^2.9.9"
+    "vite": "^2.9.9",
+    "vite-plugin-html": "^3.2.0"
   }
 }

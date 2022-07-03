@@ -2,6 +2,11 @@ import "./nav.css";
 
 import CirclePacker from "./circlePacker";
 
+function updateCircleButtonPosition(node, x, y) {
+  node.style.setProperty("--x", `${x}px`);
+  node.style.setProperty("--y", `${y}px`);
+}
+
 const prevCircles = new Map();
 function handleCirclePackerUpdate(newCirclePositions) {
   for (const newCirclePosition of newCirclePositions) {
@@ -20,7 +25,7 @@ function handleCirclePackerUpdate(newCirclePositions) {
         ],
         {
           duration: 256,
-          easing: "ease-in-out",
+          easing: "cubic-bezier(0.5, 0, 0.5, 1)",
           fill: "none",
           composite: "add",
         }
@@ -28,11 +33,11 @@ function handleCirclePackerUpdate(newCirclePositions) {
 
       const animation = new Animation(effect, document.timeline);
       animation.ready.then(() => {
-        node.style.transform = `translate(${x}px, ${y}px)`;
+        updateCircleButtonPosition(node, x, y);
       });
       animation.play();
     } else {
-      node.style.transform = `translate(${x}px, ${y}px)`;
+      updateCircleButtonPosition(node, x, y);
       node.classList.add("entered");
     }
 
